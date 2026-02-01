@@ -1,0 +1,49 @@
+package com.example.englishtutor.ui
+
+import androidx.compose.foundation.background
+import androidx.compose.material3.*
+import androidx.compose.runtime.Composable
+import androidx.compose.foundation.layout.*
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
+
+@Composable
+fun DrawerContent(
+    onItemSelected: (String) -> Unit
+) {
+    Column(
+        modifier = Modifier
+            .fillMaxHeight()
+            .fillMaxWidth(0.5f) // 👈 half of the screen
+            .background(Color.White) // 👈 white background
+            .padding(16.dp)
+
+    ) {
+
+        Text(
+            text = "English Tutor",
+            style = MaterialTheme.typography.headlineSmall
+        )
+
+        Spacer(modifier = Modifier.height(24.dp))
+
+        NavigationDrawerItem(
+            label = { Text("Home") },
+            selected = false,
+            onClick = { onItemSelected("home") }
+        )
+
+        NavigationDrawerItem(
+            label = { Text("BDT → USD") },
+            selected = false,
+            onClick = { onItemSelected("calculator") }
+        )
+
+        NavigationDrawerItem(
+            label = { Text("About") },
+            selected = false,
+            onClick = { onItemSelected("about") }
+        )
+    }
+}
