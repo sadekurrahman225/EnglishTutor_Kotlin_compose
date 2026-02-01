@@ -10,6 +10,7 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun DrawerContent(
+    selectedItem: String,
     onItemSelected: (String) -> Unit
 ) {
     Column(
@@ -29,20 +30,22 @@ fun DrawerContent(
         Spacer(modifier = Modifier.height(24.dp))
 
         NavigationDrawerItem(
-            label = { Text("Home") },
-            selected = false,
-            onClick = { onItemSelected("home") }
-        )
-
-        NavigationDrawerItem(
-            label = { Text("BDT → USD") },
-            selected = false,
+            label = { Text("BDT → USDD") },
+            selected = selectedItem == "calculator",
             onClick = { onItemSelected("calculator") }
         )
 
         NavigationDrawerItem(
+            label = { Text("Home") },
+            selected = selectedItem == "home",
+            onClick = { onItemSelected("home") }
+        )
+
+
+
+        NavigationDrawerItem(
             label = { Text("About") },
-            selected = false,
+            selected = selectedItem == "about",
             onClick = { onItemSelected("about") }
         )
     }

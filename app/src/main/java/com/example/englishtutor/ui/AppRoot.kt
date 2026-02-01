@@ -17,12 +17,15 @@ fun AppRoot() {
     val navController = rememberNavController()
     val drawerState = rememberDrawerState(DrawerValue.Closed)
     val scope = rememberCoroutineScope()
+    var selectedItem by remember { mutableStateOf("home") }
 
     ModalNavigationDrawer(
         drawerState = drawerState,
         drawerContent = {
             DrawerContent(
+                selectedItem = selectedItem,
                 onItemSelected = { route ->
+                    selectedItem = route
                     scope.launch {
                         drawerState.close()
                         navController.navigate(route)
