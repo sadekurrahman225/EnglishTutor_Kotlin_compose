@@ -8,7 +8,7 @@ import androidx.navigation.compose.rememberNavController
 import kotlinx.coroutines.launch
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
-import com.example.englishtutor.ui.navigation.NavGraph
+import com.example.englishtutor.ui.navigation.AppNavGraph
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -52,7 +52,7 @@ fun AppRoot() {
                 )
             }
         ) { paddingValues ->
-            NavGraph(
+            AppNavGraph(
                 navController = navController,
                 modifier = Modifier.padding(paddingValues)
             )
