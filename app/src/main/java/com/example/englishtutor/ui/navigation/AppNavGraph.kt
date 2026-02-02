@@ -31,5 +31,9 @@ fun AppNavGraph(navController: NavHostController, modifier: Modifier) {
         composable(AppDestination.About.route) {
             AboutScreen()
         }
+
+        composable(AppDestination.Edit.route) {
+            EditScreen()
+        }
     }
 }
