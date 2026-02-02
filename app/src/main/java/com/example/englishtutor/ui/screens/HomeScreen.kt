@@ -13,22 +13,41 @@ fun HomeScreen(
     onAboutClick: () -> Unit
 ) {
     Column(
-        modifier = Modifier.fillMaxSize().padding(24.dp),
-        verticalArrangement = Arrangement.Center,
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(24.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text("English Tutor", style = MaterialTheme.typography.headlineLarge)
 
-        Spacer(Modifier.height(24.dp))
+        Spacer(Modifier.height(32.dp))
 
-        Button(onClick = onCalculatorClick) {
-            Text("BDT to USD Calculator")
+        Text(
+            text = "English Tutor",
+            style = MaterialTheme.typography.headlineLarge,
+            color = MaterialTheme.colorScheme.primary
+        )
+
+        Text(
+            text = "Learn English easily",
+            style = MaterialTheme.typography.bodyMedium
+        )
+
+        Spacer(Modifier.height(48.dp))
+
+        Button(
+            onClick = onCalculatorClick,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text("BDT → USD Calculator")
         }
 
-        Spacer(Modifier.height(12.dp))
+        Spacer(Modifier.height(16.dp))
 
-        OutlinedButton(onClick = onAboutClick) {
-            Text("About")
+        OutlinedButton(
+            onClick = onAboutClick,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text("About App")
         }
     }
 }
