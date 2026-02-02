@@ -36,6 +36,7 @@ fun AppRoot() {
     ) {
 
         Scaffold(
+            containerColor = MaterialTheme.colorScheme.surface,
             topBar = {
                 TopAppBar(
                     title = { Text("English Tutor") },
